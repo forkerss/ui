@@ -1,26 +1,33 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { Layout } from "antd";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import "antd/dist/antd.css";
 
-function App() {
+import "./globals";
+import './assets/index.css';
+import Header from "./components/Header/Header";
+import ContentMain from "./components/MainContent/MainContent";
+import Footer from "./components/Footer/Footer";
+
+
+function AppLayout() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Layout style={{ minHeight: '100vh' }}>
+      <Header />
+      <ContentMain />
+      <Footer />
+    </Layout>
   );
 }
 
-export default App;
+export default class App extends React.Component {
+  render() {
+    return (
+      <Router>
+        <Switch>
+          <Route component={AppLayout} />
+        </Switch>
+      </Router>
+    );
+  }
+};
