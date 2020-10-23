@@ -11,6 +11,14 @@
 - react-cookies
 - react-infinite-scroller
 
+# Usage
+**set callback url**
+
+![](./docs/github-applications-setting.png)
+```js
+global.GH_OAUTH_CLIENT_ID = "xxxx"; // github application client ID
+```
+
 # 页面
 
 ## Index
